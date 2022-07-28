@@ -1,0 +1,81 @@
+--- #deployment outline
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:
+  labels:
+    app:
+    tier:
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app:
+  template:
+    metadata:
+      labels:
+        app: 
+        tier: 
+    spec:
+      containers:
+        - name: 
+          image:
+
+--- #deploymenet explanation
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: #what it will be called externally
+  labels:
+    app: #what it will be called internally
+    tier: #where it sits it the app
+spec: #spec for the deployment (essentially a replica set)
+  replicas: #number of pods thiat match
+  selector: #what is going to be connected
+    matchLabels: #how it finds another in a pod
+      app: #the actually name of what will be connected to
+  template: #template of the pod
+    metadata:
+      labels:
+        app: 
+        tier: 
+    spec:
+      containers:
+        - name: 
+          image: #where it should go to pull form
+
+--- #sevice outline
+apiVersion:
+kind:
+metadata:
+  name:
+  labels:
+    app:
+    tier:
+spec:
+  type:
+  selector:
+    app: 
+  ports:
+  - name:
+    port: 
+    targetPort: 
+
+
+--- #service explanation
+apiVersion:
+kind:
+metadata:
+  name:
+  labels:
+    app:
+    tier:
+spec:
+  type: #the type of service you want to create - defualt is cluster IP
+  selector:
+    app: 
+  ports:
+  - name:
+    port: 
+    targetPort: 
