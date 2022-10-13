@@ -1,0 +1,34 @@
+--- #sevice outline
+apiVersion:
+kind:
+metadata:
+  name:
+  labels:
+    app:
+    tier:
+spec:
+  type:
+  selector:
+    app: 
+  ports:
+  - name:
+    port: 
+    targetPort: 
+
+
+--- #service explanation
+apiVersion:
+kind:
+metadata:
+  name:
+  labels:
+    app: #example of what a label might look like
+    tier:
+spec:
+  type: #the type of service you want to create - defualt is cluster IP (can be load balancer or nordport)
+  selector: #used to determine what will be conneted
+    app: 
+  ports:
+  - name:
+    port: #where things connect from outside
+    targetPort: #where things connect inside
