@@ -12,6 +12,7 @@ spec:
   selector:
     matchLabels:
       app:
+  strategy:
   template:
     metadata:
       labels:
@@ -35,6 +36,7 @@ spec: #spec for the deployment (essentially a replica set)
   selector: #what is going to be connected
     matchLabels: #how it finds another in a pod
       app: #the actually name of what will be connected to
+  strategy: #used to describe the method in which updates will be deployed
   template: #template of the pod
     metadata:
       labels:
