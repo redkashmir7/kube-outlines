@@ -1,0 +1,40 @@
+--- #HPA outline
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name:
+  namespace:
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: 
+  minReplicas: 
+  maxReplicas: 
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
+--- #HPA exaplanation
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name:
+  namespace:
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: 
+  minReplicas: 
+  maxReplicas: 
+  metrics: #the metrics that the HPA will scale based on
+  - type: Resource
+    resource: #what factor you want to be considered
+      name: 
+      target: #based on the resource, this list tells the the auto scaler exactly what to look for
+        type: #what will be evaluated(can be cpu, messsages in a que, open requests, etc...)
+        averageUtilization: #the average you are looking for
