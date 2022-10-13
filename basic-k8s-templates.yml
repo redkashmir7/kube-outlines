@@ -12,6 +12,7 @@ spec:
   selector:
     matchLabels:
       app:
+  minReadySeconds:
   strategy:
   template:
     metadata:
@@ -36,7 +37,8 @@ spec: #spec for the deployment (essentially a replica set)
   selector: #what is going to be connected
     matchLabels: #how it finds another in a pod
       app: #the actually name of what will be connected to
-  strategy: #used to describe the method in which updates will be deployed
+  minReadySeconds: #determins how long there should be a pause before next step in rolling upates is completed
+  strategy: #used to describe the method in which updates will be deployed. These updates happen when the tempalte is updated. Note, In flight updates are droped with new updates
   template: #template of the pod
     metadata:
       labels:
