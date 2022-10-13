@@ -14,6 +14,9 @@ spec:
       app:
   minReadySeconds:
   strategy:
+    rollingUpdate:
+      maxSurge:
+      maxUnavailable:
   template:
     metadata:
       labels:
@@ -38,7 +41,11 @@ spec: #spec for the deployment (essentially a replica set)
     matchLabels: #how it finds another in a pod
       app: #the actually name of what will be connected to
   minReadySeconds: #determins how long there should be a pause before next step in rolling upates is completed
-  strategy: #used to describe the method in which updates will be deployed. These updates happen when the tempalte is updated. Note, In flight updates are droped with new updates
+  strategy: #used to describe the method in which updates will be deployed. Done via rollout command. Note you can also slect history to see what has been done.
+            #These updates happen when the tempalte is updated. Note, In flight updates are droped if a new update is placed
+    rollingUpdate: #most common method of updating a K8's cluster 
+      maxSurge: # the highest amount you can go over the replicas number (can be a number or a percentage) 
+      maxUnavailable: #the highest amount you can go below the replicas number
   template: #template of the pod
     metadata:
       labels:
