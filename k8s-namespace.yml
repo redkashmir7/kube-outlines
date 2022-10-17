@@ -1,4 +1,11 @@
+--- #namespace outline
 apiVersioin: v1
 kind: Namespace
 metadata:
   name:
+--- #namespace explanation
+apiVersioin: v1
+kind: Namespace #this is how you set up a name space in K8s. Fine for env set up, but not security. Use dif clusters for that
+metadata:
+  name:
+

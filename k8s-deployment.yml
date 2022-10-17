@@ -29,6 +29,8 @@ spec:
           resources:
             requests:
               cpu:
+          limits:
+            cpu: 
 
 --- #deploymenet explanation
 apiVersion: apps/v1
@@ -59,5 +61,7 @@ spec: #spec for the deployment (essentially a replica set)
         - name: 
           image: #where it should go to pull form
           resources:
-            requests: #asking for a specific resource
-              cpu: #how to determine how much CPU you want when spun up (can be a full number for milli cores or a decimal)
+            requests: #lists how much the min needed is so scheduler can look at the node
+              cpu: #used to specifiy needed cpu to create a pod (can be a full number for milli cores or a decimal)
+            limits: #determines maximum resource usage
+              cpu: 
